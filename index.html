@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijayi Bhava's Global Technologies | Vision Beyond Horizons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --m2s-gold: #FFD700;
+            --m2s-cyan: #00e5ff;
+        }
+
+        body {
+            margin: 0; padding: 0; background-color: #000; color: white;
+            font-family: 'Inter', sans-serif; min-height: 100vh;
+        }
+
+        /* ZOOM ANIMATION FOR BACKGROUND */
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); } /* Grow slowly */
+            100% { transform: scale(1); }    /* Shrink back */
+        }
+
+        .main-bg-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 11, 30, 0.75), rgba(0, 8, 20, 0.9)), 
+                        url("file:///C:/Users/ASUS/OneDrive/Documents/New folder/OneDrive/Pictures/Camera Roll/M2S.jpeg");
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            z-index: -1;
+            /* Applying the animation: 20 seconds for a very smooth, slow effect */
+            animation: slowZoom 20s infinite ease-in-out;
+        }
+
+        .tech-font { font-family: 'Orbitron', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .modal-active { display: flex !important; }
+
+        #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateX(100%); }
+        #mobile-menu.active { transform: translateX(0); }
+
+        .nav-title {
+            line-height: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="flex flex-col overflow-x-hidden">
+
+    <div class="main-bg-overlay"></div>
+
+    <nav class="fixed w-full z-50 glass px-4 md:px-8 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-yellow-500 shadow-lg shadow-yellow-500/40 flex-shrink-0 bg-black">
+                <img src="file:///C:/Users/ASUS/OneDrive/Documents/New folder/OneDrive/Pictures/Camera Roll/M2S.jpeg" class="w-full h-full object-cover">
+            </div>
+            <h1 class="tech-font font-bold text-[10px] md:text-lg tracking-wider nav-title">
+                <span>VIJAYI BHAVA'S</span>
+                <span class="text-yellow-500">GLOBAL TECHNOLOGIES</span>
+            </h1>
+        </div>
+        
+        <div class="hidden lg:flex gap-8 text-xs uppercase tracking-widest text-gray-300">
+            <a href="#" class="hover:text-yellow-500 transition">Home</a>
+            <a href="#" class="hover:text-yellow-500 transition">Services</a>
+            <a href="#" class="hover:text-yellow-500 transition">AI Solutions</a>
+            <a href="#" class="hover:text-yellow-500 transition">About</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <button onclick="toggleModal()" class="tech-font border border-yellow-500 text-yellow-500 px-3 py-2 rounded text-[9px] md:text-xs hover:bg-yellow-500 hover:text-black transition uppercase tracking-widest">
+                Login
+            </button>
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-yellow-500 text-xl p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 glass z-[60] p-10 lg:hidden flex flex-col gap-6 shadow-2xl">
+        <button onclick="toggleMobileMenu()" class="text-right text-yellow-500 text-2xl mb-4"><i class="fas fa-times"></i></button>
+        <a href="#" class="tech-font text-sm text-gray-200 uppercase">Home</a>
+        <a href="#" class="tech-font text-sm text-gray-200 uppercase">Services</a>
+        <a href="#" class="tech-font text-sm text-gray-200 uppercase">AI Solutions</a>
+        <a href="#" class="tech-font text-sm text-gray-200 uppercase">About</a>
+    </div>
+
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 pt-40 pb-20">
+        <h2 class="tech-font text-3xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+            MASTERY SKILLS TO SURVIVE<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">VISION BEYOND HORIZONS</span>
+        </h2>
+        <p class="max-w-2xl text-gray-300 mb-10 text-sm md:text-lg">Propelling technology through M2S Secure Frameworks.</p>
+        
+        <button onclick="toggleModal()" class="bg-yellow-500 text-black font-bold px-10 py-4 rounded-lg tech-font uppercase tracking-widest hover:bg-white transition text-xs shadow-lg shadow-yellow-500/20">
+            ENTER PORTAL
+        </button>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 w-full max-w-5xl">
+            <div class="glass p-8 rounded-xl border-t border-white/10">
+                <i class="fas fa-brain text-cyan-400 text-2xl mb-4"></i>
+                <h3 class="tech-font text-[10px] uppercase tracking-widest">AI Systems</h3>
+            </div>
+            <div class="glass p-8 rounded-xl border-t border-yellow-500/50 bg-yellow-500/5">
+                <i class="fas fa-shield-halved text-yellow-500 text-2xl mb-4"></i>
+                <h3 class="tech-font text-[10px] uppercase tracking-widest">M2S Security</h3>
+            </div>
+            <div class="glass p-8 rounded-xl border-t border-white/10">
+                <i class="fas fa-globe text-blue-400 text-2xl mb-4"></i>
+                <h3 class="tech-font text-[10px] uppercase tracking-widest">Global Reach</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer class="glass mt-auto py-8 px-6 text-center text-[10px] text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-white/5">
+        <p>© 2026 VIJAYI BHAVA'S GLOBAL TECHNOLOGIES. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-6 uppercase tracking-widest">
+            <a href="#" class="hover:text-white transition">Privacy</a>
+            <a href="#" class="hover:text-white transition">Terms</a>
+            <a href="#" class="hover:text-white transition">Contact</a>
+        </div>
+    </footer>
+
+    <div id="loginModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass w-full max-w-md p-8 md:p-10 rounded-2xl relative border border-yellow-500/20">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
+
+            <div class="text-center mb-6">
+                <h3 id="modalTitle" class="tech-font text-lg text-yellow-500 mb-2 uppercase tracking-widest">Identity Gateway</h3>
+                <p id="modalDesc" class="text-[9px] text-gray-400 tracking-[0.2em]">SECURE ACCESS PROTOCOL</p>
+            </div>
+
+            <div class="flex border-b border-gray-700 mb-6">
+                <button onclick="setRole('Admin')" id="tabAdmin" class="flex-1 pb-3 text-[10px] tech-font text-yellow-500 border-b-2 border-yellow-500">ADMIN</button>
+                <button onclick="setRole('Employee')" id="tabEmployee" class="flex-1 pb-3 text-[10px] tech-font text-gray-500 border-b-2 border-transparent hover:text-white transition">STAFF</button>
+                <button onclick="setRole('Customer')" id="tabCustomer" class="flex-1 pb-3 text-[10px] tech-font text-gray-500 border-b-2 border-transparent hover:text-white transition">CLIENT</button>
+            </div>
+
+            <form class="space-y-4">
+                <div id="regExtraFields" class="hidden space-y-4">
+                    <input type="text" placeholder="FULL NAME" class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-xs text-white outline-none focus:border-yellow-500">
+                    <input type="email" placeholder="OFFICIAL EMAIL" class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-xs text-white outline-none focus:border-yellow-500">
+                </div>
+                <input type="text" placeholder="ACCESS ID / USERNAME" class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-xs text-white outline-none focus:border-yellow-500">
+                <input type="password" placeholder="PASSWORD" class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-xs text-white outline-none focus:border-yellow-500">
+                
+                <button type="submit" id="authBtn" class="w-full bg-yellow-500 text-black font-bold py-4 rounded tech-font transition mt-4 uppercase text-[10px] tracking-widest">
+                    Initialize Login
+                </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-[9px] text-gray-500 uppercase tracking-widest">
+                    <span id="regPromptText">Don't have an account?</span> 
+                    <a href="javascript:void(0)" onclick="switchToRegister()" id="regLink" class="text-yellow-500 ml-1 hover:underline">REGISTER HERE</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('active'); }
+        function toggleModal() { document.getElementById('loginModal').classList.toggle('modal-active'); }
+
+        function switchToRegister() {
+            const fields = document.getElementById('regExtraFields');
+            const title = document.getElementById('modalTitle');
+            const btn = document.getElementById('authBtn');
+            const prompt = document.getElementById('regPromptText');
+            const link = document.getElementById('regLink');
+
+            if(fields.classList.contains('hidden')) {
+                fields.classList.remove('hidden');
+                title.innerText = "ACCOUNT REGISTRATION";
+                btn.innerText = "CREATE ACCOUNT";
+                prompt.innerText = "Already have an account?";
+                link.innerText = "LOGIN HERE";
+            } else {
+                fields.classList.add('hidden');
+                title.innerText = "IDENTITY GATEWAY";
+                btn.innerText = "INITIALIZE LOGIN";
+                prompt.innerText = "Don't have an account?";
+                link.innerText = "REGISTER HERE";
+            }
+        }
+
+        function setRole(role) {
+            const roles = ['Admin', 'Employee', 'Customer'];
+            roles.forEach(r => {
+                const tab = document.getElementById('tab' + r);
+                tab.className = (r === role) ? "flex-1 pb-3 text-[10px] tech-font text-yellow-500 border-b-2 border-yellow-500" : "flex-1 pb-3 text-[10px] tech-font text-gray-500 border-b-2 border-transparent hover:text-white transition";
+            });
+        }
+    </script>
+</body>
+</html>
